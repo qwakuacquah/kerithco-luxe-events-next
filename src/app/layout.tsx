@@ -45,6 +45,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://kerithandco.com",
   },
+  icons: {
+    icon: "/assets/kerith-logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -53,7 +56,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en"     suppressHydrationWarning>
       <body className={`${dmSans.variable} ${playfairDisplay.variable}`}>
         <Providers>{children}</Providers>
       </body>
