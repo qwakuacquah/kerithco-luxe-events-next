@@ -52,7 +52,15 @@ function validateSMTPConfig(): { valid: boolean; missing: string[] } {
 
 // Create reusable transporter
 // Mailjet uses SMTP with API Key as username and Secret Key as password
-const transporterConfig: nodemailer.TransportOptions = {
+const transporterConfig: {
+  host: string;
+  port: number;
+  secure: boolean;
+  auth?: {
+    user: string;
+    pass: string;
+  };
+} = {
   host: SMTP_HOST,
   port: SMTP_PORT,
   secure: SMTP_PORT === 465, // true for 465, false for other ports
