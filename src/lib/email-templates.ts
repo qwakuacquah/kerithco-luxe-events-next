@@ -16,6 +16,9 @@ export interface ContactEmailData {
   name: string;
   email: string;
   phone?: string;
+  eventType?: string;
+  eventDate?: string;
+  budgetRange?: string;
   message: string;
 }
 
@@ -344,6 +347,35 @@ export function generateContactEmail(data: ContactEmailData): string {
         </div>
         ` : ''}
       </div>
+
+      ${data.eventType || data.eventDate || data.budgetRange ? `
+      <div class="section">
+        <div class="section-title">Event Details</div>
+        ${data.eventType ? `
+        <div class="info-row">
+          <div class="info-label">Event Type</div>
+          <div class="info-value">${data.eventType}</div>
+        </div>
+        ` : ''}
+        ${data.eventDate ? `
+        <div class="info-row">
+          <div class="info-label">Event Date</div>
+          <div class="info-value">${new Date(data.eventDate).toLocaleDateString("en-US", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}</div>
+        </div>
+        ` : ''}
+        ${data.budgetRange ? `
+        <div class="info-row">
+          <div class="info-label">Budget Range</div>
+          <div class="info-value">${data.budgetRange}</div>
+        </div>
+        ` : ''}
+      </div>
+      ` : ''}
 
       <div class="section">
         <div class="section-title">Message</div>

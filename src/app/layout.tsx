@@ -18,22 +18,27 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Kerith & Co. Events | Luxury Event Planning",
+  title: "Kerith & Co. Events | Luxury Event Planning Rooted in Calm, Clarity & Personalized Elegance",
   description:
-    "Kerith & Co. Events specializes in luxury event planning for weddings, baby showers, corporate events, and more. Creating unforgettable moments through intentional design and seamless coordination.",
+    "Luxury event planning built on clarity, organization, and calm execution. We handle the details so you can enjoy the moment. Because peace of mind is the real luxury.",
   authors: [{ name: "Kerith & Co. Events" }],
   keywords: [
-    "event planning",
-    "luxury events",
+    "luxury event planning",
+    "calm event coordination",
     "wedding planner",
-    "baby shower",
+    "baby shower planning",
     "corporate events",
     "event coordination",
+    "stress-free event planning",
+    "neuro-inclusive planning",
+    "guest experience design",
+    "event concierge services",
+    "inclusive luxury events",
   ],
   openGraph: {
-    title: "Kerith & Co. Events | Luxury Event Planning",
+    title: "Kerith & Co. Events | Luxury Event Planning Rooted in Calm & Clarity",
     description:
-      "Creating unforgettable moments through intentional design and seamless coordination.",
+      "Luxury event planning built on clarity, organization, and calm execution. We handle the details so you can enjoy the moment.",
     type: "website",
     images: ["https://lovable.dev/opengraph-image-p98pqg.png"],
   },

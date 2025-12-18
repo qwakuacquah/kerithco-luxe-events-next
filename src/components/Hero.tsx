@@ -22,18 +22,17 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center pt-24 sm:pt-20 pb-20">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs sm:text-sm tracking-[0.3em] uppercase text-foreground/80 mb-4 sm:mb-6 animate-fade-up opacity-0 delay-100">
-            Luxury Event Planning
-          </p>
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium text-foreground mb-6 sm:mb-8 leading-tight animate-fade-up opacity-0 delay-200 px-2">
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium text-foreground mb-6 sm:mb-8 leading-tight animate-fade-up opacity-0 delay-100 px-2">
             Kerith & Co.
             <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal mt-1 sm:mt-2 italic">
               Events
             </span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed animate-fade-up opacity-0 delay-300 px-4">
-            Crafting unforgettable moments through intentional design, 
-            seamless coordination, and elevated experiences.
+          <p className="text-base sm:text-lg md:text-xl text-foreground/90 max-w-3xl mx-auto mb-4 sm:mb-6 leading-relaxed animate-fade-up opacity-0 delay-200 px-4 font-medium">
+            Luxury Event Planning Rooted in Calm, Clarity & Seamless Coordination.
+          </p>
+          <p className="text-sm sm:text-base md:text-lg text-foreground/80 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed animate-fade-up opacity-0 delay-300 px-4">
+            We design elegant, organized celebrations with thoughtful detail and intentional execution so you can enjoy your moment with complete peace of mind.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-up opacity-0 delay-400 px-4">
             <Button variant="luxury" size="xl" className="w-full sm:w-auto" asChild>

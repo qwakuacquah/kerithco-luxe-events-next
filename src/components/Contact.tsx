@@ -4,9 +4,17 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { useEmail } from "@/hooks/use-email";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { EVENT_TYPES, BUDGET_RANGES } from "@/lib/constants";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -15,6 +23,9 @@ const Contact = () => {
     name: "",
     email: "",
     phone: "",
+    eventType: "",
+    eventDate: "",
+    budgetRange: "",
     message: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -78,7 +89,7 @@ const Contact = () => {
           title: "Message Sent",
           description: "Thank you for reaching out! We'll be in touch soon.",
         });
-        setFormData({ name: "", email: "", phone: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", eventType: "", eventDate: "", budgetRange: "", message: "" });
         setErrors({});
       } else {
         toast({
@@ -110,9 +121,8 @@ const Contact = () => {
                 Let's Create Something Beautiful
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-8 sm:mb-10 text-sm sm:text-base">
-                Ready to bring your vision to life? We'd love to hear about your 
-                upcoming celebration. Reach out today and let's start planning 
-                something extraordinary.
+                We'd love to hear about your upcoming celebration.  
+                Share your vision below and we'll begin crafting an elegant, organized, and meaningful experience.
               </p>
 
               <div className="space-y-4 sm:space-y-6">
@@ -229,8 +239,95 @@ const Contact = () => {
                   )}
                 </div>
                 <div>
+                  <label htmlFor="contact-event-type" className="text-sm text-muted-foreground mb-2 block">
+                    Event Type
+                  </label>
+                  <Select
+                    value={formData.eventType}
+                    onValueChange={(value) => {
+                      setFormData({ ...formData, eventType: value });
+                      if (errors.eventType) setErrors({ ...errors, eventType: "" });
+                    }}
+                  >
+                    <SelectTrigger
+                      id="contact-event-type"
+                      className="bg-transparent border-border focus:border-gold"
+                      aria-invalid={!!errors.eventType}
+                    >
+                      <SelectValue placeholder="Select event type" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {EVENT_TYPES.map((eventType) => (
+                        <SelectItem key={eventType} value={eventType}>
+                          {eventType}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  {errors.eventType && (
+                    <p id="contact-event-type-error" className="text-sm text-destructive mt-1">
+                      {errors.eventType}
+                    </p>
+                  )}
+                </div>
+                <div>
+                  <label htmlFor="contact-event-date" className="text-sm text-muted-foreground mb-2 block">
+                    Event Date
+                  </label>
+                  <Input
+                    id="contact-event-date"
+                    name="eventDate"
+                    type="date"
+                    value={formData.eventDate}
+                    onChange={(e) => {
+                      setFormData({ ...formData, eventDate: e.target.value });
+                      if (errors.eventDate) setErrors({ ...errors, eventDate: "" });
+                    }}
+                    className="bg-transparent border-border focus:border-gold"
+                    aria-invalid={!!errors.eventDate}
+                    aria-describedby={errors.eventDate ? "contact-event-date-error" : undefined}
+                  />
+                  {errors.eventDate && (
+                    <p id="contact-event-date-error" className="text-sm text-destructive mt-1">
+                      {errors.eventDate}
+                    </p>
+                  )}
+                </div>
+                <div>
+                  <label htmlFor="contact-budget-range" className="text-sm text-muted-foreground mb-2 block">
+                    Budget Range
+                  </label>
+                  <Select
+                    value={formData.budgetRange}
+                    onValueChange={(value) => {
+                      setFormData({ ...formData, budgetRange: value });
+                      if (errors.budgetRange) setErrors({ ...errors, budgetRange: "" });
+                    }}
+                  >
+                    <SelectTrigger
+                      id="contact-budget-range"
+                      className="bg-transparent border-border focus:border-gold"
+                      aria-invalid={!!errors.budgetRange}
+                    >
+                      <SelectValue placeholder="Select budget range" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {BUDGET_RANGES.map((budgetRange) => (
+                        <SelectItem key={budgetRange} value={budgetRange}>
+                          {budgetRange}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  {errors.budgetRange && (
+                    <p id="contact-budget-range-error" className="text-sm text-destructive mt-1">
+                      {errors.budgetRange}
+                    </p>
+                  )}
+                </div>
+                <div>
                   <label htmlFor="contact-message" className="text-sm text-muted-foreground mb-2 block">
-                    Tell Us About Your Event
+                    Message
                   </label>
                   <Textarea
                     id="contact-message"
@@ -259,7 +356,7 @@ const Contact = () => {
                   className="w-full"
                   disabled={isLoading}
                 >
-                  {isLoading ? "Sending..." : "Send Message"}
+                  {isLoading ? "Sending..." : "Submit Inquiry"}
                 </Button>
               </form>
             </div>
