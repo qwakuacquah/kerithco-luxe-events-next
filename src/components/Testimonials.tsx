@@ -3,21 +3,27 @@ import { Quote } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "Kerith & Co. exceeded every expectation. Our wedding was absolutely flawless, and every detail was exactly as we envisioned. They made the entire process stress-free and magical.",
-    name: "Sarah & Michael",
-    event: "Wedding Celebration",
+      "I asked for simplicity and elegance, and Cheryl brought it to life effortlessly. She is patient, organized, and a true listener. Every detail reflected who we are as a couple. I would choose Kerith & Co. a thousand times again.",
+    name: "Abigail A.",
+    event: "Elegant Traditional Wedding (Ghana)",
   },
   {
     quote:
-      "The attention to detail and professionalism was outstanding. Our corporate gala was a huge success, and our guests are still talking about it months later.",
-    name: "Jennifer Adams",
-    event: "Corporate Gala",
+      "Cheryl was the backbone of our wedding. She coordinated vendors with confidence, managed the day with grace, and handled every detail with precision. My family still talks about how smoothly everything flowed. Cheryl doesn't just plan events — she brings structure, peace, and excellence.",
+    name: "Faustina A.",
+    event: "Classic Ceremony & Reception (Ghana)",
   },
   {
     quote:
-      "They transformed my vision into reality for my daughter's baby shower. The elegance and thoughtfulness in every element was beyond beautiful.",
-    name: "Amanda Chen",
-    event: "Baby Shower",
+      "As a Pakistani Muslim bride, I wanted a planner who would truly respect and understand my traditions. Cheryl exceeded every expectation. She asked thoughtful questions, honored our culture, and created an event that felt beautifully personal without ever feeling forced. I recommend Kerith & Co. to anyone who wants a planner who genuinely cares.",
+    name: "Famia C.",
+    event: "Pakistani Muslim Wedding",
+  },
+  {
+    quote:
+      "Planning a wedding abroad is stressful, but Kerith & Co. made everything unbelievably easy. Cheryl managed logistics, communication, and design with complete professionalism, turning a complex destination wedding into a smooth and beautiful experience. She understood my vision immediately and delivered beyond what I imagined. We still talk about how seamless the day felt.",
+    name: "Olivia A.",
+    event: "Destination Wedding (China)",
   },
 ];
 
